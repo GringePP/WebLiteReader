@@ -1,0 +1,24 @@
+@import "../base.scss";
+
+.tab {
+  float: left;
+  height: 100%;
+  padding: 0 10px;
+}
+
+.tab-content {
+  font-size: 13px;
+  color: #272729;
+  line-height: 100%;
+}
+
+.tab-activated {
+  border-bottom: $primary-color 3px solid;
+}
+
+.tab-indicator {
+  //width: 100%;
+  //height: 3px;
+  //background-color: $primary-color;
+}
+

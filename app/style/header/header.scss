@@ -1,0 +1,35 @@
+@import "../base.scss";
+
+.header {
+  width: 100%;
+  background-color: $primary-background-color;
+  box-shadow: 2px 2px 10px #ccc;
+  height: 80px;
+  overflow: hidden;
+}
+
+.header-icon {
+  float: left;
+  width: 50px;
+  height: 50px;
+  line-height: 80px;
+  margin-left: 10%;
+  margin-top: 15px;
+  border-radius: 10px;
+  background-image: url("../../asset/icon.png");
+  background-size: 100%, 100%;
+}
+
+.header-title {
+  float: left;
+  margin-left: 12px;
+  font-size: 20px;
+  font-family: 'Courgette', serif;
+  line-height: 80px;
+  color: $primary-color;
+}
+
+.header-tab-list {
+  height: 100%;
+  margin-left: 25%;
+}

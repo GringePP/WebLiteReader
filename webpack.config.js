@@ -1,10 +1,11 @@
 let path = require('path');
 module.exports = {
 
-    entry: './app/index.js',
+    entry: './app/index.jsx',
     output: {
         path: path.resolve(__dirname, './build'),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        publicPath: 'build/'
     },
     module: {
         loaders: [
@@ -18,8 +19,16 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader!postcss-loader',
+                test: /\.css|scss$/,
+                loader: 'style-loader!css-loader!postcss-loader!sass-loader',
+                exclude: path.resolve(__dirname, './node_modules/'),
+                include: path.resolve(__dirname, './app/')
+            },
+            {
+                test: /\.png|jpg$/,
+                loader: 'url-loader',
+                exclude: path.resolve(__dirname, './node_modules/'),
+                include: path.resolve(__dirname, './app/asset/')
             }
         ]
     }
