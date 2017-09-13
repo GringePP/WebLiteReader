@@ -27,7 +27,7 @@ export default class TabList extends React.Component {
                 {
                     this.state.list.map((item, index) => {
                         return <p className={`tab-list-item ${this.getStateClassName(index)}`} key={index}
-                                  onClick={() => this.onItemClick(index).bind(this)}>{item}</p>
+                                  onClick={() => this.onItemClick(index)}>{item}</p>
                     })
                 }
             </div>

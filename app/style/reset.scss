@@ -1,8 +1,12 @@
 @import "base.scss";
 
 * {
-    margin: 0;
-    padding: 0;
-    background-color: $primary-background-color;
-    color: $primary-font-color;
+  margin: 0;
+  padding: 0;
+  background-color: $primary-background-color;
+  color: $primary-font-color;
+}
+
+body {
+  background-color: #f1f1f1;
 }
