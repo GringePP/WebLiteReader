@@ -2,6 +2,7 @@ import * as React from "react";
 import Header from "./header/header.jsx";
 import MovieContainer from "./content/movie/movie-container.jsx";
 import '../style/app.scss';
+import DailyContainer from "./content/daily/daily-container.jsx";
 
 export default class App extends React.Component {
 
@@ -17,7 +18,7 @@ export default class App extends React.Component {
         return (<div className="app-wrapper">
             <Header list={this.state.list}/>
             <div className="content-wrapper">
-                <MovieContainer/>
+                <DailyContainer/>
             </div>
         </div>)
     }

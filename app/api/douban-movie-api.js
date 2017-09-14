@@ -7,7 +7,11 @@ module.exports = {
             + "https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=深圳" +
             "&start=" + start +
             "&count=" + count;
-        return fetch(targetUrl).then(res => res.json())
+        return fetch(targetUrl).then(res => res.json());
+    },
+    getShit: () => {
+        let targetUrl = proxyUrl+"http://news-at.zhihu.com/api/4/news/latest";
+        return fetch(targetUrl).then(res => res.json());
     }
 
 };
