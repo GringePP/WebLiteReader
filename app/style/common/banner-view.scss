@@ -38,8 +38,9 @@
   position: absolute;
   display: flex;
   align-items: center;
-  background-color: rgba(0,0,0,0.31);
+  background-color: rgba(0, 0, 0, 0.31);
   border-radius: 5px;
+  justify-content: center;
 }
 
 .banner-item-title {
@@ -47,6 +48,7 @@
   font-size: x-large;
   color: white;
   padding: 10px 20px;
+  text-align: center;
 }
 
 .banner-item-img {

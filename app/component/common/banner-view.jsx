@@ -1,6 +1,8 @@
 import * as React from "react";
 import '../../style/common/banner-view.scss';
 
+let autoScrollTime;
+
 export default class BannerView extends React.Component {
 
     constructor(props) {
@@ -14,10 +16,14 @@ export default class BannerView extends React.Component {
         this.onItemClick = this.onItemClick.bind(this);
     }
 
+    componentDidMount() {
+        autoScrollTime = setInterval(() => this.nextPic(), this.props.interval);
+    }
+
     componentWillReceiveProps(nextProps) {
         this.setState({
-            list: nextProps.list
-        })
+            list: nextProps.list,
+        });
     }
 
     getItemImage(index) {
@@ -74,5 +80,7 @@ export default class BannerView extends React.Component {
 
 BannerView.defaultProps = {
     list: [],
-    index: 0
+    index: 0,
+    autoScroll: true,
+    interval: 4500
 };
