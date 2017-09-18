@@ -18,7 +18,7 @@ export default class Bus {
 
     static send(event, data) {
         eventPool.filter(item => item.event === event)
-            .forEach(item => item.callback.forEach(c => c.call(data)));
+                .forEach(item => item.callback.forEach(c => c(data)));
     }
 
 }

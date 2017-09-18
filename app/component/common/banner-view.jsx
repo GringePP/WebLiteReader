@@ -1,7 +1,7 @@
 import * as React from "react";
 import '../../style/common/banner-view.scss';
 
-let autoScrollTime;
+let autoScrollTimer;
 
 export default class BannerView extends React.Component {
 
@@ -17,7 +17,11 @@ export default class BannerView extends React.Component {
     }
 
     componentDidMount() {
-        autoScrollTime = setInterval(() => this.nextPic(), this.props.interval);
+        autoScrollTimer = setInterval(() => this.nextPic(), this.props.interval);
+    }
+
+    componentWillUnmount() {
+        if (autoScrollTimer) clearInterval(autoScrollTimer);
     }
 
     componentWillReceiveProps(nextProps) {

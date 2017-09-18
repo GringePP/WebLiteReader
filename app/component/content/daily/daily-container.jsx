@@ -18,7 +18,7 @@ export default class DailyContainer extends React.Component {
         getTopArticles()
             .then(data => this.setState({
                 topArticleList: data["top_stories"]
-            }))
+            }));
     }
 
     getTopArticleImage(index) {

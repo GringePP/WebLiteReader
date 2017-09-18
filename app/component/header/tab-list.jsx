@@ -1,5 +1,6 @@
 import * as React from "react";
 import '../../style/header/tab-list.scss'
+import Bus from "../../util/bus/bus";
 
 export default class TabList extends React.Component {
 
@@ -16,9 +17,8 @@ export default class TabList extends React.Component {
     }
 
     onItemClick(index) {
-        this.setState({
-            index: index
-        });
+        this.setState({index: index});
+        Bus.send("INDEX_CHANGE", index);
     }
 
     render() {
