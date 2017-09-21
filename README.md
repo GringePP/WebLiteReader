@@ -1,6 +1,8 @@
 # WebLiteReader
 
 [![Author](https://img.shields.io/badge/author-mindjet-yellow.svg)](https://github.com/Mindjet)
+[![Author](https://img.shields.io/badge/author-gringe-ff69b4.svg)](https://github.com/Gringe920)
+
 
 ## Take a glance
 
@@ -17,23 +19,18 @@ Now, come back to the main topic: How am I supposed to get and run this app? Bas
 First of all, clone this repository to your disk:
 
 ```shell
-$ git clone https://github.com/Mindjet/WebLiteReader.git
+$ git clone https://github.com/GringePP/WebLiteReader.git
 ```
 
-Secondly, go under the path of the project and install all the dependencies:
+Secondly, go under the path of the project and install all the dependencies and pack the project:
 
 ```shell
 $ cd WebLiteReader
 $ npm install
-```
-
-Finally, get it running! 
-
-```shell
 $ webpack
 ```
 
-
+Finally, open the `index.html` in the root directory with your browser! 
 
 Hope you enjoy it. 😊
 
