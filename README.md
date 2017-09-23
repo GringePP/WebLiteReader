@@ -3,6 +3,8 @@
 [![Author](https://img.shields.io/badge/author-mindjet-yellow.svg)](https://github.com/Mindjet)
 [![Author](https://img.shields.io/badge/author-gringe-ff69b4.svg)](https://github.com/Gringe920)
 
+[中文版](./README-CN.md)
+
 
 ## Take a glance
 
