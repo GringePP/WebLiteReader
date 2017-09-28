@@ -2,6 +2,7 @@ import * as React from "react";
 import Header from "./header/header.jsx";
 import MovieContainer from "./content/movie/movie-container.jsx";
 import '../style/app.scss';
+import '../style/reset.scss';
 import DailyContainer from "./content/daily/daily-container.jsx";
 import Bus from "../util/bus/bus";
 
