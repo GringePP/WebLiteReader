@@ -6,7 +6,7 @@
 [English Edition](./README.md)
 
 
-## Bling~Bling~
+## Bling~ Bling~
 
 **WebLiteReader** 是一个轻量级的阅读 app，提供多种阅读材料，比如知乎日报、豆瓣电影和 Github 上热门项目等等。
 

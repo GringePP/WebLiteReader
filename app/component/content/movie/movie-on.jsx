@@ -2,39 +2,18 @@ import * as React from "react";
 import ListView from "../../common/list-view.jsx";
 import '../../../style/content/movie/movie-item.scss';
 import '../../../style/content/movie/movie-on.scss';
-
-
-let list = [
-    {
-        name: "蜘蛛侠：英雄归来",
-        post: "https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2497756471.jpg"
-    },
-    {
-        name: "猩球崛起3：终极之战",
-        post: "https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2494093630.jpg"
-    },
-    {
-        name: "敦刻尔克",
-        post: "https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2494950714.jpg"
-    },
-    {
-        name: "战狼2",
-        post: "https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2485983612.jpg"
-    },
-    {
-        name: "刀剑神域：序列之争",
-        post: "https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2498371582.jpg"
-    }
-];
+import {getMovieOn} from "../../../api/douban-movie-api";
 
 let listView;
+let start = 0;
+let count = 10;
 
 export default class MovieOn extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            list: list.concat(list)
+            list: []
         };
         this.onLoadMore = this.onLoadMore.bind(this);
         this.getListItem = this.getListItem.bind(this);
@@ -44,15 +23,24 @@ export default class MovieOn extends React.Component {
         listView = this.refs.ListView;
     }
 
+    getMovieList() {
+        getMovieOn(start, count)
+            .then(data => data["subjects"])
+            .then(data => this.setState({list: this.state.list.concat(data)}, () => {
+                start += count;
+                listView.finishLoadMore(data.length !== 0);
+            }));
+    }
+
     onLoadMore() {
-        this.setState({list: this.state.list.concat(list)}, () => listView.finishLoadMore());
+        this.getMovieList();
     }
 
     getListItem(item, index) {
         return (
             <div className="movie-item-wrapper" key={index}>
-                <img className="movie-item-image" style={{backgroundImage: 'url(' + item.post + ')'}}/>
-                <p className="movie-item-title">{item.name}</p>
+                <img className="movie-item-image" style={{backgroundImage: 'url(' + item["images"]["large"] + ')'}}/>
+                <p className="movie-item-title">{item["title"]}</p>
             </div>
         );
     }

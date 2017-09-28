@@ -9,12 +9,15 @@ export default class ListView extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoading: false
+            isLoading: false,
+            allowLoadMore: true
         };
         this.handleScroll = this.handleScroll.bind(this);
     }
 
     handleScroll() {
+        //if the loading-more is banned, no need to handle the scroll event.
+        if (!this.state.allowLoadMore) return;
         //if the view is loading more, no need to handle the scroll event.
         if (this.state.isLoading) return;
         let lastItemBottom = listView.lastChild.getBoundingClientRect().bottom;
@@ -26,8 +29,11 @@ export default class ListView extends React.Component {
         this.setState({isLoading: true}, () => this.props.onLoadMore && this.props.onLoadMore.call());
     }
 
-    finishLoadMore() {
-        this.setState({isLoading: false});
+    finishLoadMore(allowLoadMore = true) {
+        this.setState({
+            isLoading: false,
+            allowLoadMore: allowLoadMore
+        });
     }
 
     componentDidMount() {
