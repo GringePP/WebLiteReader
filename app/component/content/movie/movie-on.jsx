@@ -38,7 +38,8 @@ export default class MovieOn extends React.Component {
 
     getListItem(item, index) {
         return (
-            <div className="movie-item-wrapper" key={index}>
+            <div className="movie-item-wrapper" key={index}
+                 onClick={() => window.open(item["alt"])}>
                 <img className="movie-item-image" style={{backgroundImage: 'url(' + item["images"]["large"] + ')'}}/>
                 <p className="movie-item-title">{item["title"]}</p>
             </div>
